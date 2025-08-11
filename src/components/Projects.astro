@@ -55,91 +55,70 @@ const TAGS = {
 }
 const PROJECTS = [
   {
-    title: "Image Captioning Project",
+    title: "Multilingual Speech Translation & RAG (Gujarati-focused)",
     description:
-      "Developed an Image Captioning project using a CNN-LSTM architecture, trained on the Flickr8k dataset, achieving over 60% accuracy in generating descriptive captions for images. Evaluated the model's performance using metrics such as BLEU score, showcasing the project's ability to generate captions that closely match human-written descriptions.",
-    link: "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/",
-    github:"https://github.com/Devasy23/Image_captionning_project",
-    image: "/projects/image-captioning.webp", // replace with your project image path
-    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.TENSORFLOW], // add tags if needed
+      "Fine-tuned Whisper/NeMo-based ASR and TTS for Gujarati. Built RAG pipelines to provide personalized spiritual-content recommendations to 1.2M+ subscribers across 191 countries (production pipeline work).",
+    image: "/projects/multilingual-speech.webp",
+    links: { code: "", demo: "" },
   },
   {
-    title: "Custom Object Detection System with TensorFlow.js and Firebase",
+    title: "LLM Red-Teaming & Automated Security Suite",
     description:
-      "Developed a custom object detection system using Pretrained Effecientnet model using tensorflow, converted to TensorFlow.js for real-time deployment on a React website. Integrated Firebase for secure login authentication and displayed real-time object counts on a dynamic dashboard.",
-    image: "/projects/object-detection-system.webp", // replace with your project image path
-    link: "https://devasy23-object-detection-system-app-5mulol.streamlit.app/",
-    tags: [TAGS.PYTHON, TAGS.FIREBASE, TAGS.TENSORFLOW, TAGS.NODE], // add tags if needed
+      "Automated red-teaming framework generating adversarial prompts and scoring model exposures. Implemented synthetic attack corpora based on OWASP-like taxonomy and end-to-end vulnerability triage.",
+    image: "/projects/llm-redteam.webp",
+    links: { code: "", demo: "" },
   },
-  // {
-  //   title: "Hybrid Movie Recommendation System",
-  //   description:
-  //     "Developed a movie recommendation system capable of providing content-based recommendations and collaborative filtering-based recommendations (used the movielens 100k dataset). Achieved 93% accuracy in predicting user ratings for unseen movies, resulting in improved user experience and a 10% increase in average user engagement. Integrated NLP algorithms to assess user preferences, providing more personalized and curated movie recommendations.",
-  //   image: "/projects/movie-recommendation-system.webp", // replace with your project image path
-  //   tags: [], // add tags if needed
-  // },
   {
-    title: "JPG to HEIF Converter",
+    title: "YOLOv8 Waste Segregation Classifier",
     description:
-      "This project allows you to freely convert JPG images to HEIF format. HEIF (High Efficiency Image Format) is a more efficient image format in terms of storage and quality compared to traditional formats like JPG. Why HEIF? HEIF, as the name suggests, is a high-efficiency image format. Not only does it offer smaller file sizes compared to JPG, but it also provides better image quality. This makes it an excellent choice for anyone looking to save storage space without compromising on image quality.",
-    image: "/projects/jpg-to-heif-converter.webp", // replace with your project image path
-    link:"https://jpgtoheifconverter.streamlit.app/",
-    github:"https://github.com/Devasy23/JPG2HEIF", 
-    tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HEIC], // add tags if needed "Streamlit", "Pillow", "HEIF"
+      "Fine-tuned YOLOv8 for local waste categories; integrated synthetic data augmentation and optimized route analytics for municipal adoption.",
+    image: "/projects/waste-management.webp",
+    links: { code: "", demo: "" },
   },
-]
+  {
+    title: "Image Captioning (CNN–LSTM)",
+    description:
+      "Image captioning trained on Flickr8k; produced descriptive captions with BLEU-based evaluation and qualitative improvements using data augmentation.",
+    image: "/projects/image-captioning.webp",
+    links: { code: "https://github.com/Devasy23/Image_captionning_project", demo: "https://devasy23-image-captionning-project-app-5mulol.streamlit.app/" },
+  },
+  {
+    title: "JPG → HEIF Converter (Streamlit)",
+    description:
+      "Lightweight Streamlit app for high-efficiency image conversion preserving quality while reducing storage — practical utility used in multiple sample workflows.",
+    image: "/projects/jpg-to-heif.webp",
+    links: { code: "https://github.com/Devasy23/JPG2HEIF", demo: "https://jpgtoheifconverter.streamlit.app/" },
+  },
+];
 ---
-
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-12">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Image for the project's preview" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+    PROJECTS.map((p) => (
+      <article class="group flex flex-col md:flex-row gap-6">
+        <div class="md:w-1/2">
+          <img src={p.image} alt={`Preview for ${p.title}`} class="w-full h-56 object-cover rounded-lg shadow-lg" loading="lazy" />
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+        <div class="md:w-1/2">
+          <h3 class="text-2xl font-bold text-gray-100">{p.title}</h3>
+          <p class="mt-3 text-gray-300">{p.description}</p>
+          <div class="mt-4 flex gap-3">
+            {p.links.code && (
+              <LinkButton href={p.links.code}>
+                <GitHubIcon /> Code
+              </LinkButton>
+            )}
+            {p.links.demo && (
+              <LinkButton href={p.links.demo}>
+                <LinkIcon /> Preview
+              </LinkButton>
+            )}
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
+---
 
 

@@ -1,21 +1,36 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCIE = [
-{
-    date: "June 2023 - July 2023",
-    title: "Research Intern",
-    company: "Indian Navy, INS Valsura Jamnagar",
-    description:
-      "Developed and Deployed end-to-end Facial Recognition System for the Indian Navy using Django, creating efficient API endpoints to handle data processing and storage. Collaborated with a team to build the frontend of the system using Node.js and React, integrating the Facenet model for accurate face recognition, and employing MongoDB as the database for seamless data management. Also developed another project where build a model to classify objects from very low resolution images.",
+  {
+    date: "Jun 2024 – Present",
+    title: "AI Researcher",
+    company: "BlueInfy Solutions",
+    bullets: [
+      "Built automated red-teaming frameworks for generative models (Llama-3.x, Phi-3.5 family).",
+      "Designed synthetic datasets targeting OWASP-style LLM vulnerabilities to benchmark model safety.",
+      "Implemented severity scoring and automated triage which reduced manual pentester hours.",
+    ],
   },
-  // {
-  //   date: "Septiembre 2022",
-  //   title: "Principal Frontend Engineer",
-  //   company: "Adevinta Spain",
-  //   description:
-  //     "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  // },
-]
+  {
+    date: "Jan 2024 – Jun 2024",
+    title: "Machine Learning Intern",
+    company: "NightHack Technologies",
+    bullets: [
+      "Developed a multimodal emotion-aware music generator combining facial, textual and voice sentiment signals.",
+      "Optimized real-time pipelines using multiprocessing & batching, reducing latency by ~20%.",
+      "Ran a pilot with 50 users to validate recommendations and user satisfaction metrics.",
+    ],
+  },
+  {
+    date: "Jun 2023 – Jul 2023",
+    title: "Research Intern",
+    company: "Indian Navy — INS Valsura",
+    bullets: [
+      "Delivered a Django-based facial recognition system using FaceNet; deployed APIs and frontend for user workflows.",
+      "Built low-resolution image classification models for operational datasets and automated form OCR pipelines.",
+    ],
+  },
+];
 ---
 
 <ol class="relative mt-16">
